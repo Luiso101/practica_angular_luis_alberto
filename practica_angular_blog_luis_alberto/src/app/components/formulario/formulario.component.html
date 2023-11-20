@@ -1,0 +1,41 @@
+<div class="container">
+    <form [formGroup]="formPost" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Título</label>
+            <input type="text" class="form-control" formControlName="titulo">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Texto</label>
+            <textarea type="text" class="form-control" name="" id="" cols="30" rows="10"
+                formControlName="texto"></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Autor</label>
+            <input type="text" class="form-control" formControlName="autor">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Imagen (Introduce una url válida)</label>
+            <input type="text" class="form-control" formControlName="imagen">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Categoría</label>
+            <select class="form-select" formControlName="categoria">
+                <option value="Lovecraft y Otros Autores">Lovecraft y Otros Autores</option>
+                <option value="Literatura de los Mitos">Literatura de los Mitos</option>
+                <option value="Dioses Exteriores">Dioses Exteriores</option>
+                <option value="Dioses Primigenios">Dioses Primigenios</option>
+                <option value="Dioses Arquetípicos">Dioses Arquetípicos</option>
+                <option value="Criaturas de los Mitos">Criaturas de los Mitos</option>
+                <option value="Personajes Destacados">Personajes Destacados</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="">Fecha</label>
+            <input type="date" class="form-control" formControlName="fecha">
+        </div>
+        <input type="submit" value="Enviar" class="btn btn-primary btn-lg">
+    </form>
+</div>
+<ul>
+    <li *ngFor="let err of errors">{{err.message}}</li>
+</ul>
